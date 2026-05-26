@@ -502,7 +502,7 @@
 
 <script>
 
-const BASE = 'https://clipr-backend.onrender.com/api/v1/urlShortener';
+const BASE = 'https://clipr-backend.onrender.com';
 
 function fmtDate(dt) {
   if (!dt) return '';
@@ -527,7 +527,7 @@ async function shortenUrl() {
     const res = await fetch(`${BASE}/shorten`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(url)
+      body: url
     });
     if (!res.ok) throw new Error();
     const data = await res.json();
